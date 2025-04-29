@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react';
 import { vitePluginReactSource } from 'react-find/vite';
 export default defineConfig({
   plugins: [react(), vitePluginReactSource()],
-
+  base: '/ImageCompression/',
   // 优化WebAssembly加载
   server: {
     headers: {

@@ -1,0 +1,36 @@
+name: 部署GitHub Pages
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 切换分支
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+          submodules: true
+      # 设置node版本
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+      - name: npm install and build 🔧
+        run: |
+          pnpm install
+          pnpm run build
+      # Deploy
+      - name: Public result to github
+        uses: x-actions/git-push@v1
+        env:
+          GITHUB_EMAIL: 'lyqsl@foxmail.com'
+          GITHUB_USERNAME: 'Silence-dream'
+          PUBLISH_REPO: https://${{ secrets.PAT }}@github.com/Silence-dream/ImageCompression.git
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: 'dist'

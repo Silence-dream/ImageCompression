@@ -1,0 +1,187 @@
+/* App CSS */
+@import './styles/responsive.css';
+
+/* 全局样式重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 自定义滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+    'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f5f5f5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ant Design 样式覆盖 */
+.ant-upload-drag {
+  border-radius: 8px !important;
+  overflow: hidden;
+  transition: all 0.3s;
+  border: 2px dashed #d9d9d9 !important;
+  background-color: #fafafa;
+}
+
+.ant-upload-drag:hover {
+  border-color: #1890ff !important;
+}
+
+.ant-card {
+  background-color: #fff;
+  border-radius: 8px;
+  border-color: #f0f0f0;
+}
+
+.ant-card-head {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 0 16px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-color: #fff;
+}
+
+.ant-btn {
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+
+.ant-btn:hover,
+.ant-btn:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ant-btn-primary {
+  background-color: #1890ff;
+  border-color: #1890ff;
+}
+
+.ant-btn-primary:hover,
+.ant-btn-primary:focus {
+  background-color: #40a9ff;
+  border-color: #40a9ff;
+}
+
+.ant-btn-dangerous {
+  color: #ff4d4f;
+  border-color: #ff4d4f;
+}
+
+.ant-divider {
+  border-color: #f0f0f0;
+}
+
+.ant-slider {
+  margin: 14px 6px 10px;
+}
+
+.ant-slider-rail {
+  background-color: #f0f0f0;
+}
+
+.ant-slider-track {
+  background-color: #1890ff;
+}
+
+.ant-slider-handle {
+  border-color: #1890ff;
+  background-color: #fff;
+}
+
+.ant-slider:hover .ant-slider-track {
+  background-color: #40a9ff;
+}
+
+.ant-slider:hover .ant-slider-handle {
+  border-color: #40a9ff;
+}
+
+.ant-statistic-title {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.ant-tag {
+  margin: 0;
+  border-radius: 4px;
+}
+
+.ant-empty {
+  margin: 32px 0;
+}
+
+.ant-empty-image img {
+  opacity: 0.8;
+}
+
+.ant-upload-drag-icon .anticon {
+  font-size: 48px;
+  color: #1890ff;
+}
+
+.ant-upload-text {
+  margin: 8px 0;
+  font-weight: 500;
+}
+
+/* 响应式移动设备调整 */
+@media (max-width: 576px) {
+  .ant-card {
+    border-radius: 6px;
+  }
+
+  .ant-btn {
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .ant-slider-handle {
+    width: 18px;
+    height: 18px;
+    margin-top: -7px;
+  }
+
+  .ant-statistic-content {
+    font-size: 20px;
+  }
+}
+
+/* 触摸设备优化 */
+@media (hover: none) and (pointer: coarse) {
+  .ant-btn {
+    min-height: 44px;
+  }
+
+  .ant-slider-handle {
+    width: 24px;
+    height: 24px;
+    margin-top: -10px;
+  }
+}

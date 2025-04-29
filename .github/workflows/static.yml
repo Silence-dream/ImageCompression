@@ -2,7 +2,7 @@ name: 部署GitHub Pages
 on:
   push:
     branches:
-      - main
+      - dev
 jobs:
   build:
     runs-on: ubuntu-latest
